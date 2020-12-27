@@ -1,0 +1,17 @@
+@import "../../assets/styles/colors.scss";
+
+.ButtonContainer {
+  color: $primary;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  &:hover {
+    border: 2px solid $primary;
+  }
+  .active {
+    color: $white;
+    background-color: $primary;
+  }
+}
