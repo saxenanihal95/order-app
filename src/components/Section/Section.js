@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "../Card/Card";
+import Grid from "../Grid/Grid";
 import SubTitle from "../SubTitle/SubTitle";
 import Title from "../Title/Title";
 import "./Section.scss";
@@ -24,6 +26,21 @@ export default function Section() {
           vitae, hendrerit a est. Cras viverra tellus libero, in feugiat augue
           consequat nec. Aliquam at velit dui."
         />
+        <Grid>
+          <Card>
+            <p>Any Burrito + Soft drink + Brownies</p>
+            <p>
+              Each Burrito, Tortilla filled with rice, pinto beans, with choice
+              of main filling, Pico de Gallo, Cheese and Guacamole as standard.
+            </p>
+            <p>£11.00</p>
+          </Card>
+        </Grid>
+      </div>
+      <div className="OrderContainer">
+        <Card>
+          <p>Your Basket</p>
+        </Card>
       </div>
     </div>
   );
