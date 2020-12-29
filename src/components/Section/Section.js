@@ -6,6 +6,7 @@ import Title from "../Title/Title";
 import "./Section.scss";
 
 import { createServer } from "miragejs";
+import Modal from "../Modal/Modal";
 
 let server = createServer();
 server.get("/api/sections", {
@@ -108,6 +109,7 @@ server.get("/api/sections", {
 
 export default function Section() {
   const [sections, setSections] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     fetch("/api/sections")
       .then((res) => res.json())
@@ -119,29 +121,35 @@ export default function Section() {
   console.log(sections);
 
   return (
-    <div className="Section">
-      <div>
-        {sections.map((section) => (
-          <div key={section.id}>
-            <Title text={section.title} />
-            <SubTitle text={section.subTitle} />
-            <Grid>
-              {section.items.map((item) => (
-                <Card>
-                  <p>{item.title}</p>
-                  <p>{item.subTitle}</p>
-                  <p>{item.price}</p>
-                </Card>
-              ))}
-            </Grid>
-          </div>
-        ))}
+    <>
+      <Modal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+      ></Modal>
+      <div className="Section">
+        <div>
+          {sections.map((section) => (
+            <div key={section.id}>
+              <Title text={section.title} />
+              <SubTitle text={section.subTitle} />
+              <Grid>
+                {section.items.map((item) => (
+                  <Card onClick={() => setModalVisible(true)}>
+                    <p>{item.title}</p>
+                    <p>{item.subTitle}</p>
+                    <p>{item.price}</p>
+                  </Card>
+                ))}
+              </Grid>
+            </div>
+          ))}
+        </div>
+        <div className="OrderContainer">
+          <Card>
+            <p>Your Basket</p>
+          </Card>
+        </div>
       </div>
-      <div className="OrderContainer">
-        <Card>
-          <p>Your Basket</p>
-        </Card>
-      </div>
-    </div>
+    </>
   );
 }
