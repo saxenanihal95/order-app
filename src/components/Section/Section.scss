@@ -1,3 +1,4 @@
+@import "../../assets/styles/colors.scss";
 .Section {
   padding: 0px 40px;
   display: flex;
@@ -6,4 +7,120 @@
 .OrderContainer {
   min-width: 300px;
   margin: 20px;
+}
+
+.ItemHeader {
+  padding: 0 20px;
+  margin: 10px 0px;
+  display: flex;
+  background-color: $white;
+  .heading {
+    flex: 1;
+  }
+}
+
+.FavouriteHeader {
+  display: flex;
+  align-items: center;
+  h2 {
+    margin: 10px;
+  }
+}
+
+.Tabs {
+  display: flex;
+  .Tab {
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 3px 15px;
+  }
+  .active {
+    background-color: #81c40f;
+    color: white;
+    border-radius: 3px;
+  }
+}
+
+.PizzaContainer {
+  margin: 10px;
+  .PizzaItem {
+    cursor: pointer;
+    padding: 10px;
+    background-color: $white;
+  }
+}
+
+.ModalTitle {
+  padding: 20px;
+  background-color: $white;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  display: flex;
+  align-items: center;
+  h2 {
+    flex: 1;
+    margin: 0px;
+  }
+  .BackIcon {
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
+.ModalFooter {
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  display: flex;
+  align-items: center;
+  .OrderButtonContainer {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid $primary;
+    color: $primary;
+    div {
+      margin: 0 8px;
+    }
+    .Decreament {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      border: 1px solid $primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .disabled {
+      background-color: $gray;
+    }
+    .Icreament {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      border: 1px solid $primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .AddToBasketButton {
+    flex: 1;
+    display: flex;
+    color: $white;
+    background-color: $primary;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    .text {
+      flex: 1;
+      margin: 0;
+    }
+  }
 }

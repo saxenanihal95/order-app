@@ -1,3 +1,4 @@
+@import "../../assets/styles/colors.scss";
 .modal {
   position: fixed;
   z-index: 1;
@@ -12,16 +13,14 @@
 }
 
 .content {
-  background-color: #fefefe;
+  background-color: $gray;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 60%;
+  width: 40%;
+  border-radius: 13px;
 }
 
 .close {
   color: #aaaaaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
